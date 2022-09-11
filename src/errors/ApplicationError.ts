@@ -16,7 +16,7 @@ export abstract class ApplicationError extends Error {
   };
 }
 
-//General errors (dealed with next)
+//Uncaught errors (dealed with next)
 //Validation errors
 //Database errors
 //Authentication errors
