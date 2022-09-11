@@ -7,6 +7,7 @@ import 'express-async-errors';
 import { version, author } from '../package.json';
 import { Constants } from './constants';
 import { routes } from './routes';
+import { errorHandler } from './middlewares/errorHandler';
 
 class App {
   public server: express.Application;
@@ -21,7 +22,7 @@ class App {
     this.server.use(express.json());
     this.server.use(cors());
     this.server.use(`/api/v${version}`, routes);
-    //Error
+    this.server.use(errorHandler);
   }
 }
 
